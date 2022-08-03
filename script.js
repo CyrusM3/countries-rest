@@ -1,27 +1,14 @@
-const header = document.querySelector('.header');
-const sticky = header.offsetTop;
+import { header } from './header.js';
+
 const countriesElement = document.getElementById('countries');
 const toggleButton = document.getElementById('toggle');
 const filterButton = document.getElementById('filter');
-const regionFilters = filterButton.querySelectorAll('li');
-const searchElement = document.getElementById('search');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('close');
+const regionFilters = filterButton.querySelectorAll('li');
+const searchElement = document.getElementById('search');
 
 const url = 'https://restcountries.com/v3.1/all';
-
-// Sticky header
-function stickyHeader() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add('sticky');
-  } else {
-    header.classList.remove('sticky');
-  }
-}
-
-window.onscroll = function () {
-  stickyHeader();
-};
 
 const getCountries = async function () {
   const response = await fetch(url);
