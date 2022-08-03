@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+
+:root {
+  --backgroundElement: hsl(0, 0%, 100%);
+  --body: hsl(0, 0%, 98%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--body);
+  color: hsl(200, 15%, 8%);
+  font-family: 'Nunito Sans', sans-serif;
+  margin: 0;
+}
+
+body.dark {
+  color: hsl(0, 0%, 100%);
+  --body: hsl(207, 26%, 17%);
+  --backgroundElement: hsl(209, 23%, 22%);
+}
+
+header {
+  background-color: var(--backgroundElement);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+img {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  padding: 30px;
+  margin: auto;
+}
+
+h1 {
+  margin: 0;
+}
+
+/* Theme button styling */
+
+.btn-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--backgroundElement);
+  border: none;
+  color: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  width: 120px;
+}
+
+.btn-toggle .fa-solid {
+  display: none;
+}
+
+body.dark .btn-toggle .fa-solid {
+  display: inline-block;
+}
+body.dark .btn-toggle .fa-regular {
+  display: none;
+}
+
+/* Input styling*/
+.search {
+  background-color: var(--backgroundElement);
+  border-radius: 4px;
+  border: none;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+  min-width: 300px;
+  font-family: inherit;
+  font-size: 1rem;
+  color: inherit;
+}
+
+.search::placeholder {
+  color: inherit;
+}
+
+/* DropDown styling */
+.dropdown {
+  position: relative;
+  border-radius: 4px;
+  background-color: var(--backgroundElement);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.dropdown .fa-chevron-down {
+  margin-left: 10px;
+}
+
+.dropdown ul {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 4px;
+  background-color: var(--backgroundElement);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+  padding: 20px;
+  list-style-type: none;
+  width: 100%;
+  display: none;
+  z-index: 99;
+}
+
+.dropdown.open ul {
+  display: block;
+}
+
+.dropdown ul li {
+  margin: 10px 0;
+}
+
+.dropdown .filter-title {
+  display: inline;
+}
+
+/* card styling */
+.card {
+  width: 300px;
+  max-width: 100%;
+  margin: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  background-color: var(--backgroundElement);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 30px;
+}
+
+.card-body h3 {
+  margin-top: 0;
+  color: #94ccc9;
+}
+
+.container.countries {
+  margin-top: -40px;
+  justify-content: center;
+}
+
+/* Modal styling */
+.modal {
+  background-color: var(--body);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+}
+
+.modal .container {
+  background-color: var(--backgroundElement);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.modal img {
+  max-width: 300px;
+}
+
+.modal-body {
+  padding: 30px;
+}
+
+.btn-close {
+  background-color: var(--backgroundElement);
+  color: inherit;
+  border: none;
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
